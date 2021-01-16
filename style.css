@@ -1,3 +1,18 @@
 .hide {
   display: none;
 }
+
+.btn {
+    display: block;
+    background: purple;
+    color: white;
+    width: 400px;
+    height: 40px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 20px;
+
+}
+
+
+

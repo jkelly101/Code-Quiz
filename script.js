@@ -4,6 +4,9 @@
 
 var startBtn = document.querySelector("#start");
 var startScreen = document.querySelector("#start-screen");
+var qScreen = document.querySelector("#question-screen");
+var answers = document.querySelectorAll(".btn");
+var questions = document.querySelector("#question");
 
 var qIndex = [
   //question 1 / index 0
@@ -14,7 +17,7 @@ var qIndex = [
   },
   //question 2 / index 1
   {
-    q: "How to you increment i by 1?",
+    q: "In a for loop, how do you increment i by 1?",
     a: "i++",
     o: ["i = 0", "i++", "i + 1", "i < 0"],
   },
@@ -37,9 +40,8 @@ var qIndex = [
 // show the multiple choice answers
 
 function startQuiz() {
-  startScreen.style.display === "none";
+  startScreen.style.display = "none";
   displayQuestion();
-  startTimer();
 
   // hide the start page
   // call display question function
@@ -47,6 +49,8 @@ function startQuiz() {
 }
 
 function displayQuestion() {
+  qScreen.style.display = "block";
+
   // remove display: none to show first question
 }
 
