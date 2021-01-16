@@ -7,26 +7,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="start-screen">
+    <!-- hide header once start button is clicked -->
+    <header id="start-screen">
       <h1>Code Quiz</h1>
-      <p>
-        Test your JavaScript knowledge! This quiz offers multiple choice
-        questions on JavaScript fundamentals. As you proceed through the quiz,
-        correct answers will gain you points while incorrect answers will deduct
-        seconds from the timer. You will have 1 minute to complete the quiz for
-        a chance at High Score Fame!
-      </p>
-      <button id="start">Start</button>
-    </div>
+      <h2>
+        Test your JavaScript knowledge!
+        <p>
+          This quiz offers multiple choice questions on JavaScript fundamentals.
+          As you proceed through the quiz, correct answers will gain you points
+          while incorrect answers will deduct seconds from the timer. You will
+          have 1 minute to complete the quiz for a chance at High Score Fame!
+          Good Luck!
+        </p>
+      </h2>
+      <button id="start-button">Start</button>
+    </header>
 
     <div class="hide" id="question-screen">
-      <div id="question">Question</div>
-      <div id="answers">
-        <button class="btn" id="ans"></button>
-        <button class="btn" id="ans"></button>
-        <button class="btn" id="ans"></button>
-        <button class="btn" id="ans"></button>
+      <div id="question-box">
+        <div id="question-text">Question</div>
+        <div id="answer-options" class="answer-buttons">
+          <button class="btn">1</button>
+          <button class="btn">2</button>
+          <button class="btn">3</button>
+          <button class="btn">4</button>
+        </div>
       </div>
+
       <div class="hide" id="rightOrWrong"></div>
     </div>
 
