@@ -8,6 +8,7 @@ var qScreen = document.querySelector("#question-screen");
 var qBtns = document.querySelectorAll(".btn");
 var questionEl = document.querySelector("#question");
 var rightAns = document.querySelector("#rightOrWrong");
+var ansIndex = document.querySelector("#answers");
 
 var qIndex = [
   //question 1 / index 0
@@ -85,11 +86,16 @@ function displayQuestion() {
   }
 }
 
-qBtns.onclick = function checkAns(event) {
-  if (event.target.matches(qIndex[i].a)) {
+// click handler is triggered on what the user clicked on
+// shows if the answer is correct or not correct
+
+ansIndex.addEventListener("click", function (event) {
+  var element = event.target;
+
+  if (element === qIndex[i].a) {
     rightAns.innerHTML = "Correct!";
   }
-};
+});
 
 // WHEN I answer a question
 // THEN I am presented with another question
