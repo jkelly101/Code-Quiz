@@ -1,63 +1,81 @@
-// # PseudoCode
-
 // Variables Here
 
-var startBtn = document.querySelector("#start-button");
+var startBtn = document.querySelector("#start-btn");
 var startScreen = document.querySelector("#start-screen");
-var qScreen = document.querySelector("#question-screen");
-var qText = document.querySelector("#question-text");
-var aBtns = document.querySelectorAll("#answer-buttons");
+var questionScreen = document.querySelector("#question-screen");
+var questionText = document.querySelector("#question-text");
+var optionA = document.querySelector("#A");
+var optionB = document.querySelector("#B");
+var optionC = document.querySelector("#C");
+var optionD = document.querySelector("#D");
+
+console.log(optionA.innerText);
+
+startBtn.addEventListener("click", startQuiz);
+
+function startQuiz() {
+  startScreen.classList.add("hide");
+  questionScreen.classList.remove("hide");
+  displayQuestion();
+}
+
+function displayQuestion() {
+  questionText.innerText = qIndex[0].q;
+  optionA.innerText = qIndex[0].a;
+  optionB.innerText = qIndex[0].b;
+  optionC.innerText = qIndex[0].c;
+  optionD.innerText = qIndex[0].d;
+}
 
 var qIndex = [
-  //question 1 / index 0
   {
-    q: "1. An array is enclosed within which type of brackets?",
-    o: ["{ }", "[ ]", "( )", "< >"],
+    q: "1. Which brackets enclose an array?",
+    a: "{ }",
+    b: "[ ]",
+    c: "( )",
+    d: "< >",
+    correct: "B",
   },
-  //question 2 / index 1
-  {
-    q: "2. In a for loop, how do you increment i by 1?",
-    o: ["i = 0", "i++", "i + 1", "i < 0"],
-  },
-  //question 3 / index 2
-  {
-    q: "3. How do you call a function named myFunction?",
-    o: [
-      "myFunction()",
-      "function myFunction",
-      "function = myFunction()",
-      "call myFunction",
-    ],
-  },
-  //question 4 / index 3
-  {
-    q: "4. Where is the correct place to insert a Javascript?",
-    o: [
-      "The <head>",
-      "The <body>",
-      "The <head> or the <body>",
-      "The <document>",
-    ],
-  },
-  //question 5 / index 4
-  {
-    q: "5. Which of these options will return a random integer?",
-    o: ["Math.floor", "Math.float", "Math.random", "Math.floor(Math.random)"],
-  },
-  //question 6 / index 5
-  {
-    q: "Which of the following would you use to say i is not equal to 5?",
-    o: ["i == 5", "i != 5", "i =! 5", "i >= 5"],
-  },
-];
-
-var qAnswers = [
-  "[ ]",
-  "i++",
-  "myFunction()",
-  "<The <head> or the <body>",
-  "Math.floor(Math.random)",
-  "i != 5",
+  // {
+  //   q: "2. What does API stand for?",
+  //   a: "Auto Programming Integration",
+  //   b: "Always Peter Inspires",
+  //   c: "Application Programming Interface",
+  //   d: "Awful Programming Interface",
+  //   correct: "C",
+  // },
+  // {
+  //   q: "3. How would you call the function named myFunction?",
+  //   a: "myFunction()",
+  //   b: "What up, myFunction?",
+  //   c: "function = myFunction()",
+  //   d: "call myFunction()",
+  //   correct: "A",
+  // },
+  // {
+  //   q: "4. Which is the correct way to write a JavaScript tag?",
+  //   a: "<script href= >",
+  //   b: "<Dude, where's my JavaScript?>",
+  //   c: "<put JavaScript here",
+  //   d: "<script src=",
+  //   correct: "D",
+  // },
+  // {
+  //   q: "5. Which of these options will return a random integer?",
+  //   a: "Math.random(Math.floor)",
+  //   b: "Math.float",
+  //   c: "Math.random",
+  //   d: "Math.floor(Math.random)",
+  //   correct: "D",
+  // },
+  // {
+  //   q: "6. Which of the following would you use to say i is not equal to 5?",
+  //   a: "i == 5",
+  //   b: "i != 5",
+  //   c: "i =! 5",
+  //   d: "i >= 5",
+  //   correct: "B",
+  // },
 ];
 
 // GIVEN I am taking a code quiz
@@ -66,18 +84,14 @@ var qAnswers = [
 // click handler is triggered on the start button
 // timer starts
 
-function startQuiz() {
-  // hide the start page
-  startScreen.style.display = "none";
-  // call display question function
-  displayQuestion();
-  // start timer
-}
-
-startBtn.addEventListener("click", startQuiz);
+// hide the start page
+// call display question function
+// start timer
 
 // question shows up on the page
 // show the multiple choice answers
+
+// add qIndex to qText and aBtns - need to increment
 
 // click handler is triggered on what the user clicked on
 // shows if the answer is correct or not correct
