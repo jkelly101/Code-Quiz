@@ -54,3 +54,8 @@ p {
 .btn.wrong {
   background: red;
 }
+
+.result {
+  display: block;
+  font-size: 40px;
+}

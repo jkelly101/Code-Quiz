@@ -9,6 +9,8 @@ var optionB = document.querySelector("#B");
 var optionC = document.querySelector("#C");
 var optionD = document.querySelector("#D");
 var answerBtns = document.querySelectorAll(".btn");
+var resultCorrect = document.querySelector("#correct");
+var resultIncorrect = document.querySelector("#incorrect");
 
 startBtn.addEventListener("click", startQuiz);
 
@@ -25,6 +27,16 @@ function displayQuestion() {
     optionB.innerText = qIndex[i].b;
     optionC.innerText = qIndex[i].c;
     optionD.innerText = qIndex[i].d;
+  }
+  
+  function chooseAnswer(event) {
+    var userGuess = event.target;
+    if(userGuess === qIndex[0].correct)
+    resultCorrect.classList.remove("hide");
+  
+    else
+    resultIncorrect.classList.remove("hide");
+  
   }
 }
 
@@ -79,7 +91,7 @@ var qIndex = [
   },
 ];
 
-function chooseAnswer() {}
+
 
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
