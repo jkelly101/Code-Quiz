@@ -8,8 +8,7 @@ var optionA = document.querySelector("#A");
 var optionB = document.querySelector("#B");
 var optionC = document.querySelector("#C");
 var optionD = document.querySelector("#D");
-
-console.log(optionA.innerText);
+var answerBtns = document.querySelectorAll(".btn");
 
 startBtn.addEventListener("click", startQuiz);
 
@@ -20,11 +19,13 @@ function startQuiz() {
 }
 
 function displayQuestion() {
-  questionText.innerText = qIndex[0].q;
-  optionA.innerText = qIndex[0].a;
-  optionB.innerText = qIndex[0].b;
-  optionC.innerText = qIndex[0].c;
-  optionD.innerText = qIndex[0].d;
+  for (i = 0; i < qIndex.length; qIndex++) {
+    questionText.innerText = qIndex[i].q;
+    optionA.innerText = qIndex[i].a;
+    optionB.innerText = qIndex[i].b;
+    optionC.innerText = qIndex[i].c;
+    optionD.innerText = qIndex[i].d;
+  }
 }
 
 var qIndex = [
@@ -36,47 +37,49 @@ var qIndex = [
     d: "< >",
     correct: "B",
   },
-  // {
-  //   q: "2. What does API stand for?",
-  //   a: "Auto Programming Integration",
-  //   b: "Always Peter Inspires",
-  //   c: "Application Programming Interface",
-  //   d: "Awful Programming Interface",
-  //   correct: "C",
-  // },
-  // {
-  //   q: "3. How would you call the function named myFunction?",
-  //   a: "myFunction()",
-  //   b: "What up, myFunction?",
-  //   c: "function = myFunction()",
-  //   d: "call myFunction()",
-  //   correct: "A",
-  // },
-  // {
-  //   q: "4. Which is the correct way to write a JavaScript tag?",
-  //   a: "<script href= >",
-  //   b: "<Dude, where's my JavaScript?>",
-  //   c: "<put JavaScript here",
-  //   d: "<script src=",
-  //   correct: "D",
-  // },
-  // {
-  //   q: "5. Which of these options will return a random integer?",
-  //   a: "Math.random(Math.floor)",
-  //   b: "Math.float",
-  //   c: "Math.random",
-  //   d: "Math.floor(Math.random)",
-  //   correct: "D",
-  // },
-  // {
-  //   q: "6. Which of the following would you use to say i is not equal to 5?",
-  //   a: "i == 5",
-  //   b: "i != 5",
-  //   c: "i =! 5",
-  //   d: "i >= 5",
-  //   correct: "B",
-  // },
+  {
+    q: "2. What does API stand for?",
+    a: "Auto Programming Integration",
+    b: "Always Peter Inspires",
+    c: "Application Programming Interface",
+    d: "Awful Programming Interface",
+    correct: "C",
+  },
+  {
+    q: "3. How would you call the function named myFunction?",
+    a: "myFunction()",
+    b: "What up, myFunction?",
+    c: "function = myFunction()",
+    d: "call myFunction()",
+    correct: "A",
+  },
+  {
+    q: "4. Which is the correct way to write a JavaScript tag?",
+    a: "<script href= >",
+    b: "<Dude, where's my JavaScript?>",
+    c: "<put JavaScript here",
+    d: "<script src=",
+    correct: "D",
+  },
+  {
+    q: "5. Which of these options will return a random integer?",
+    a: "Math.random(Math.floor)",
+    b: "Math.float",
+    c: "Math.random",
+    d: "Math.floor(Math.random)",
+    correct: "D",
+  },
+  {
+    q: "6. Which of the following would you use to say i is not equal to 5?",
+    a: "i == 5",
+    b: "i != 5",
+    c: "i =! 5",
+    d: "i >= 5",
+    correct: "B",
+  },
 ];
+
+function chooseAnswer() {}
 
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
