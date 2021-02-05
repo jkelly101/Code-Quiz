@@ -1,5 +1,5 @@
 // Variables Here
-
+var currentQuestion = 0;
 var startBtn = document.querySelector("#start-btn");
 var startScreen = document.querySelector("#start-screen");
 var questionScreen = document.querySelector("#question-screen");
@@ -9,10 +9,12 @@ var optionB = document.querySelector("#B");
 var optionC = document.querySelector("#C");
 var optionD = document.querySelector("#D");
 var answerBtns = document.querySelectorAll(".btn");
-var resultCorrect = document.querySelector("#correct");
-var resultIncorrect = document.querySelector("#incorrect");
+var resultCorrect = document.querySelector(".correct");
+var resultIncorrect = document.querySelector(".incorrect");
+var correctAnswer = 0;
 
 startBtn.addEventListener("click", startQuiz);
+// answerBtns.addEventListener("click", chooseAnswer);
 
 function startQuiz() {
   startScreen.classList.add("hide");
@@ -20,23 +22,36 @@ function startQuiz() {
   displayQuestion();
 }
 
+function endGame() {
+  questionScreen.classList.add("hide");
+}
+
 function displayQuestion() {
-  for (i = 0; i < qIndex.length; qIndex++) {
-    questionText.innerText = qIndex[i].q;
-    optionA.innerText = qIndex[i].a;
-    optionB.innerText = qIndex[i].b;
-    optionC.innerText = qIndex[i].c;
-    optionD.innerText = qIndex[i].d;
+  // for (i = 0; i < qIndex.length; qIndex++) {
+  questionText.innerText = qIndex[currentQuestion].q;
+  optionA.innerText = qIndex[currentQuestion].a;
+  optionB.innerText = qIndex[currentQuestion].b;
+  optionC.innerText = qIndex[currentQuestion].c;
+  optionD.innerText = qIndex[currentQuestion].d;
+}
+
+function checkAnswer(event) {
+  var userGuess = event.target.innerText;
+  console.log(userGuess);
+  console.log(qIndex[currentQuestion].correct);
+  if (userGuess === qIndex[currentQuestion].correct) {
+    alert("Correct!");
+    // resultCorrect.classList.remove("hide");
+  } else {
+    alert("Incorrect!");
+    // resultIncorrect.classList.remove("hide");
   }
-  
-  function chooseAnswer(event) {
-    var userGuess = event.target;
-    if(userGuess === qIndex[0].correct)
-    resultCorrect.classList.remove("hide");
-  
-    else
-    resultIncorrect.classList.remove("hide");
-  
+
+  if (currentQuestion != qIndex.length - 1) {
+    currentQuestion++;
+    displayQuestion();
+  } else {
+    endGame();
   }
 }
 
@@ -47,7 +62,7 @@ var qIndex = [
     b: "[ ]",
     c: "( )",
     d: "< >",
-    correct: "B",
+    correct: "[ ]",
   },
   {
     q: "2. What does API stand for?",
@@ -55,7 +70,7 @@ var qIndex = [
     b: "Always Peter Inspires",
     c: "Application Programming Interface",
     d: "Awful Programming Interface",
-    correct: "C",
+    correct: "Application Programming Interface",
   },
   {
     q: "3. How would you call the function named myFunction?",
@@ -63,7 +78,7 @@ var qIndex = [
     b: "What up, myFunction?",
     c: "function = myFunction()",
     d: "call myFunction()",
-    correct: "A",
+    correct: "myFunction()",
   },
   {
     q: "4. Which is the correct way to write a JavaScript tag?",
@@ -71,7 +86,7 @@ var qIndex = [
     b: "<Dude, where's my JavaScript?>",
     c: "<put JavaScript here",
     d: "<script src=",
-    correct: "D",
+    correct: "<script src=",
   },
   {
     q: "5. Which of these options will return a random integer?",
@@ -79,7 +94,7 @@ var qIndex = [
     b: "Math.float",
     c: "Math.random",
     d: "Math.floor(Math.random)",
-    correct: "D",
+    correct: "Math.floor(Math.random)",
   },
   {
     q: "6. Which of the following would you use to say i is not equal to 5?",
@@ -87,12 +102,16 @@ var qIndex = [
     b: "i != 5",
     c: "i =! 5",
     d: "i >= 5",
-    correct: "B",
+    correct: "i != 5",
   },
 ];
+// console.log(answerBtns)
+for (var i = 0; i < answerBtns.length; i++) {
+  answerBtns[i].addEventListener("click", checkAnswer);
+}
 
-
-
+// (document.querySelectorAll(".btn")).addEventListener("click", chooseAnswer);
+//
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question

@@ -2,11 +2,14 @@
   display: none;
 }
 
+.hide-result {
+  display: none;
+}
+
 body {
   padding: 20px;
   margin: 0 10%;
 }
-
 
 .btn {
   display: block;
@@ -56,6 +59,6 @@ p {
 }
 
 .result {
-  display: block;
+  /* display: block; */
   font-size: 40px;
 }
