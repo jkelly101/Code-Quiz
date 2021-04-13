@@ -1,3 +1,9 @@
+body {
+  padding: 20px;
+  margin: 0 10%;
+  background: lavender;
+}
+
 .hide {
   display: none;
 }
@@ -6,12 +12,14 @@
   display: none;
 }
 
-body {
-  padding: 20px;
-  margin: 0 10%;
+.result {
+  font-size: 40px;
+  border: 2px solid black;
 }
 
-.btn {
+/* Button Style */
+.btn,
+.submit-btn {
   display: block;
   background: purple;
   color: white;
@@ -24,6 +32,19 @@ body {
   text-align: left;
 }
 
+.submit-btn {
+  text-align: center;
+}
+
+#play-again {
+  font-size: 16px;
+}
+
+.btn:hover {
+  background: violet;
+}
+
+/* Question Screen Styles */
 #question-screen {
   font-size: 20px;
   text-align: left;
@@ -38,6 +59,21 @@ body {
   font-weight: bold;
 }
 
+#correct {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#incorrect {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Start Screen Styles */
 #start-screen {
   text-align: center;
 }
@@ -46,19 +82,33 @@ p {
   display: block;
 }
 
-.btn:hover {
-  background: violet;
+/* Score Sheet Styles */
+
+.submit-btn-div,
+.row {
+  display: flex;
+  justify-content: space-around;
 }
 
-.btn.correct {
-  background: green;
+#highscore-div {
+  margin-top: 40px;
 }
 
-.btn.wrong {
-  background: red;
+li {
+  text-align: center;
+  font-weight: bold;
+  background: lightgray;
+  /* border: solid purple;
+  margin: 1px; */
 }
 
-.result {
-  /* display: block; */
-  font-size: 40px;
+.header,
+h4 {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.header {
+  font-size: 50px;
 }
