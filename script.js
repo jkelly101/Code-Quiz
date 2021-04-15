@@ -28,7 +28,7 @@ function startQuiz() {
 var timeEl = document.querySelector(".time");
 // var mainEl = document.getElementById("main");
 
-var secondsLeft = 30;
+var secondsLeft = 60;
 var timerInterval;
 
 function setTime() {

@@ -7,25 +7,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <div class="header"></div>
+        <h2 class="score-link">Score Board</h2>
+        <h2 class="time-line">Time:</h2>
+        <h2 class="time"></h2>
+    </div>
+    </header>
+
     <!-- hide once start button is clicked -->
-    <header id="start-screen">
+    <div id="start-screen">
       <h1>Code Quiz</h1>
       <h2>Test your JavaScript knowledge!</h2>
       <div class="instruction-div">
-        <p> This quiz offers multiple choice questions on JavaScript fundamentals.
-        </p>
+        <p> This quiz offers multiple choice questions on JavaScript fundamentals.</p>
         <p>As you proceed through the quiz, correct answers will gain you points
         while incorrect answers will deduct seconds from the timer. </p>
-        <h3>You will have 1 minute to complete the quiz for a chance at High Score Fame!
-        </h3>
+        <h3>You will have 1 minute to complete the quiz for a chance at High Score Fame!</h3>
         <h2>Good Luck!</h2>
       </div>
       <button id="start-btn">Start</button>
-    </header>
+    </div>
 
     <!-- hide until start button clicked -->
     <div class="hide" id="question-screen">
-      <h1 class="time"></h1>
       <div id="question-box">
         <div id="question-text">Question</div>
         <div id="answer-buttons">
@@ -37,6 +42,8 @@
         <!-- hide until answer btn clicked -->
         <div class="hide result" id="correct">Correct!</div>
         <div class="hide result" id="incorrect">Incorrect!</div>
+
+        <h1 class="time"></h1>
       </div>
     </div>
 
@@ -47,11 +54,13 @@
     </div>
 
     <!-- hide until timer runs out or game over -->
-    <div class="hide" id="high-score-screen">
-      <div>Your Score: <span class="show-score"></span></div>
-      <input id="enter-initials" placeholder="Enter initials here..."></input>
-      <button class="submit-btn" id="submit-initials">Submit</button>
-      <div id="score-board"></div>
+    <div class="center hide" id="high-score-screen">
+      <h3 class="center">Your Score: <span class="show-score"></span></h3>
+      <br>
+      <input class="center" id="enter-initials" placeholder="Enter initials here..."></input>
+      <br>
+      <button class="center submit-btn" id="submit-initials">Submit</button>
+      <div id="center score-board"></div>
     </div>
 
     <!-- Script File -->
