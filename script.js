@@ -21,6 +21,7 @@ startBtn.addEventListener("click", startQuiz);
 function startQuiz() {
   startScreen.classList.add("hide");
   questionScreen.classList.remove("hide");
+  questionScreen.style.display = "flex";
   displayQuestion();
   setTime();
 }
@@ -49,6 +50,7 @@ function setTime() {
 // When the game is over, the question Screen is hidden
 function endGame() {
   questionScreen.classList.add("hide");
+  questionScreen.style.display = "none";
   clearInterval(timerInterval);
   $(".show-score").text(secondsLeft);
   $("#high-score-screen").removeClass("hide");

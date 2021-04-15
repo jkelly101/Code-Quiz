@@ -60,10 +60,10 @@ body {
 #question-screen {
   font-size: 20px;
   text-align: left;
-  margin: auto;
   margin-top: 80px;
   width: auto;
   padding: 10px;
+  justify-content: center;
 }
 
 #question-text {
