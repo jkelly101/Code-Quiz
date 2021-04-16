@@ -11,9 +11,6 @@ function printScores() {
     console.log(listItem);
     winnersList.appendChild(listItem);
   }
-  // print it to div on scores.html
-  // get scores from localStorage (JSON.parse)
-  // loop thu array and print each element of object (li) scores[i].initials & scores[i].score
 }
 
 printScores();
